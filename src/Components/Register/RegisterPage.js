@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../Register/RegisterPage.css';
 
+//class for register page
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +13,7 @@ class Register extends Component {
     };
   }
 
+  //
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
