@@ -15,7 +15,7 @@ class Register extends Component {
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-
+// submit handle
   handleSubmit = async (e) => {
     e.preventDefault();
     const { username, password, confirmPassword } = this.state;
