@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../Register/RegisterPage.css';
 
-//class for register page
+// Higher-order component to pass navigate prop
+function withNavigate(Component) {
+  return props => <Component {...props} navigate={useNavigate()} />;
+}
+
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -17,11 +22,13 @@ class Register extends Component {
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-// submit handle
+
+  // submit handle
   handleSubmit = async (e) => {
     e.preventDefault();
     const { username, password, confirmPassword } = this.state;
-  
+    const { navigate } = this.props;
+
     if (password !== confirmPassword) {
       this.setState({ error: 'Passwords do not match' });
     } else {
@@ -33,12 +40,14 @@ class Register extends Component {
           },
           body: JSON.stringify({ username, password })
         });
-  
+
         if (response.ok) {
           // Registration successful
           const responseData = await response.json();
           console.log('Registration successful:', responseData);
           this.setState({ error: 'Registration successful' });
+          alert('Registration successful');
+          navigate('/login'); // Redirect to login page
         } else {
           // Registration failed
           const errorData = await response.json();
@@ -51,7 +60,6 @@ class Register extends Component {
       }
     }
   };
-  
 
   render() {
     return (
@@ -99,4 +107,4 @@ class Register extends Component {
   }
 }
 
-export default Register;
+export default withNavigate(Register);
