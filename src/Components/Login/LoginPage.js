@@ -40,6 +40,7 @@ class Login extends Component {
       if (response.ok) {
         const responseData = await response.json();
         console.log('Login successful:', responseData);
+        localStorage.setItem('username', username); // Store username in local storage
         this.setState({ error: 'Login successful' });
         alert('Login successful');
         navigate('/home'); // Redirect to the home page
