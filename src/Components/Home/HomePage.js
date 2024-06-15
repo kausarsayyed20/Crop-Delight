@@ -23,6 +23,9 @@ const HomePage = () => {
   const handleAddProduct = () => {
     navigate('/add-product');
   };
+  const handleListWork = () => {
+    navigate('/product-list');
+  };
   
   const handleAddWork = () => {
     navigate('/add-work');
@@ -41,7 +44,9 @@ const HomePage = () => {
           <h2>WELCOME TO ORGANIC STORE !!</h2>
           <div className="buttons">
             <button onClick={handleAddProduct}>Add Product</button>
+            <button onClick={handleListWork}>List Product</button>
             <button onClick={handleAddWork}>Add Work</button>
+            
           </div>
           <div className="products">
             <div className="product-card">
