@@ -8,7 +8,7 @@
   }
   
   .header {
-    background-image: url('E:/Conestoga/ProjectSystemDevelopment/crop-delight/public/tomatoes.jpeg'); /* Replace with actual path */
+    background-image: url('../../Images/tomatoes.jpeg'); /* Replace with actual path */
     background-size: cover;
     background-position: center;
     padding: 150px 20px; /* Increased padding for a taller image */
