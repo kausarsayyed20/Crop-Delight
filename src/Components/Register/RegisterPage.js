@@ -1,6 +1,9 @@
+// src/Components/Register/RegisterPage.js
+
 import React, { Component } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../Register/RegisterPage.css';
+import Navigation from '../Navigation/NavigationPage';
 
 // Higher-order component to pass navigate prop
 function withNavigate(Component) {
@@ -64,6 +67,7 @@ class Register extends Component {
   render() {
     return (
       <div className="Register">
+        <Navigation />
         <h2>Register</h2>
         <form onSubmit={this.handleSubmit}>
           <div>
@@ -102,6 +106,9 @@ class Register extends Component {
           {this.state.error && <p style={{ color: 'red' }}>{this.state.error}</p>}
           <button type="submit">Register</button>
         </form>
+        <div className="login-link">
+          <p>Already have an account? <Link to="/login">Login here</Link></p>
+        </div>
       </div>
     );
   }

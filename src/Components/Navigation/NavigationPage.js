@@ -1,26 +1,51 @@
-//Write code for navigation
-
 import React from 'react';
-import '../Navigation/NavigationPage.css';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
+import Icon from '../../Images/melon.jpg';
+import './NavigationPage.css';
 
-class Navigation extends React.Component {
-  render() {
-    return (
-      <nav className="navbar">
-        <div className="navbar-left">
-          <img src="src\Components\Navigation\logo.jpeg" alt="Crop Delight Logo" className="logo" />
+const Navigation = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isLoggedIn = localStorage.getItem('username');
+
+  const handleLogout = () => {
+    localStorage.removeItem('username');
+    navigate('/login');
+  };
+
+  return (
+    <nav className="navbar">
+      <div className="navbar-left">
+        <NavLink to="/home" className="nav-link">
+          <img src={Icon} alt="Crop Delight Logo" className="logo" />
           <span className="brand-name">CROP DELIGHT</span>
-        </div>
-        <div className="navbar-right">
-          
-          <a href="/login" className="login">Login</a>
-          
-        </div>
-      </nav>
-    );
-  }
-}
+        </NavLink>
+      </div>
+      <div className="navbar-right">
+        {isLoggedIn ? (
+          <>
+            {!location.pathname.includes('/add-product') && (
+              <NavLink to="/add-product" className="nav-link">
+                Add Product
+              </NavLink>
+            )}
+            <button onClick={handleLogout} className="logout">
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <NavLink to="/login" className="nav-link">
+              Login
+            </NavLink>
+            <NavLink to="/register" className="nav-link">
+              Register
+            </NavLink>
+          </>
+        )}
+      </div>
+    </nav>
+  );
+};
 
 export default Navigation;
-
-

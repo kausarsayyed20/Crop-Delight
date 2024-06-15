@@ -1,7 +1,9 @@
 // src/Components/Login/LoginPage.js
+
 import React, { Component } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../Login/LoginPage.css';
+import Navigation from '../Navigation/NavigationPage';
 
 function withNavigate(Component) {
   return props => <Component {...props} navigate={useNavigate()} />;
@@ -59,6 +61,8 @@ class Login extends Component {
 
   render() {
     return (
+      <div>
+      <Navigation />
       <div className="Login">
         <h2>Login</h2>
         <form onSubmit={this.handleSubmit}>
@@ -87,6 +91,10 @@ class Login extends Component {
           {this.state.error && <p style={{ color: 'red' }}>{this.state.error}</p>}
           <button type="submit">Login</button>
         </form>
+        <div className="register-link">
+          <p>New user? <Link to="/register">Register here</Link></p>
+        </div>
+      </div>
       </div>
     );
   }
