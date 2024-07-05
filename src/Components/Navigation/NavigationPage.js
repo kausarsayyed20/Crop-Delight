@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
-import Icon from '../../Images/melon.jpg';
+import Icon from '../../Images/logo_img.png';
 import './NavigationPage.css';
 
 const Navigation = () => {
@@ -38,7 +38,7 @@ const Navigation = () => {
             <NavLink to="/login" className="nav-link">
               Login
             </NavLink>
-            <NavLink to="/register" className="nav-link">
+            <NavLink to="/" className="nav-link">
               Register
             </NavLink>
           </>

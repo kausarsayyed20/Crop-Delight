@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import '../Login/LoginPage.css';
 import Navigation from '../Navigation/NavigationPage';
+import Footer from '../Footer/FooterPage';
 
 function withNavigate(Component) {
   return props => <Component {...props} navigate={useNavigate()} />;
@@ -92,9 +93,10 @@ class Login extends Component {
           <button type="submit">Login</button>
         </form>
         <div className="register-link">
-          <p>New user? <Link to="/register">Register here</Link></p>
+          <p>New user? <Link to="/">Register here</Link></p>
         </div>
       </div>
+      <Footer/>
       </div>
     );
   }

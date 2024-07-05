@@ -8,6 +8,7 @@ import citrusfruits from '../../Images/citrusfruits.jpg';
 import root from '../../Images/root.jpg';
 import tropical from '../../Images/tropical.webp';
 import Navigation from '../Navigation/NavigationPage';
+import Footer from '../Footer/FooterPage';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -88,6 +89,7 @@ const HomePage = () => {
           </div>
         </>
       )}
+      <Footer/>
     </div>
   );
 };

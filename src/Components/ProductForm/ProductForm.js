@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProductForm.css';
 import Navigation from '../Navigation/NavigationPage'; // Import Navigation component
+import Footer from '../Footer/FooterPage';
 
 // Higher-order component to pass navigate prop
 function withNavigate(Component) {
@@ -104,6 +105,7 @@ class ProductForm extends Component {
             <button type="submit">Add Product</button>
           </form>
         </div>
+        <Footer/>
       </div>
     );
   }

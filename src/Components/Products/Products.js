@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Products.css';
 import Navigation from '../Navigation/NavigationPage'; // Import Navigation component
+import Footer from '../Footer/FooterPage';
 
 // Higher-order component to pass navigate prop
 function withNavigate(Component) {
@@ -56,6 +57,7 @@ class Products extends Component {
             ))}
           </ul>
         </div>
+        <Footer/>
       </div>
     );
   }

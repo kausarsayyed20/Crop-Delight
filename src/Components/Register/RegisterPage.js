@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import '../Register/RegisterPage.css';
 import Navigation from '../Navigation/NavigationPage';
+import Footer from '../Footer/FooterPage';
 
 // Higher-order component to pass navigate prop
 function withNavigate(Component) {
@@ -66,8 +67,9 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="Register">
+      <div>
         <Navigation />
+      <div className="Register">
         <h2>Register</h2>
         <form onSubmit={this.handleSubmit}>
           <div>
@@ -109,6 +111,8 @@ class Register extends Component {
         <div className="login-link">
           <p>Already have an account? <Link to="/login">Login here</Link></p>
         </div>
+      </div>
+      <Footer />
       </div>
     );
   }

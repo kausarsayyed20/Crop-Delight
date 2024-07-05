@@ -1,9 +1,13 @@
+@font-face {
+    font-family: font1;
+    src: url(../../Fonts/NatureBeautyPersonalUse-9Y2DK.ttf);
+}
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #788402;
     color: white;
   }
   
