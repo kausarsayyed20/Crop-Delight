@@ -24,12 +24,16 @@ const HomePage = () => {
   const handleAddProduct = () => {
     navigate('/add-product');
   };
-  const handleListWork = () => {
+  const handleListProduct = () => {
     navigate('/product-list');
   };
   
   const handleAddWork = () => {
     navigate('/add-work');
+  };
+
+  const handleListWork = () => {
+    navigate('/list-work');
   };
 
   // Render home page content only if logged in
@@ -45,9 +49,9 @@ const HomePage = () => {
           <h2>WELCOME TO ORGANIC STORE !!</h2>
           <div className="buttons">
             <button onClick={handleAddProduct}>Add Product</button>
-            <button onClick={handleListWork}>List Product</button>
+            <button onClick={handleListProduct}>List Product</button>
             <button onClick={handleAddWork}>Add Work</button>
-            
+            <button onClick={handleListWork}>List Work</button>
           </div>
           <div className="products">
             <div className="product-card">
